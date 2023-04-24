@@ -1,0 +1,9 @@
+{% extends "auctions/layout.html"%}
+{% block body %}
+    <h3 class="title">{{ category }} / Items</h3>
+    <div class="contains2">
+    {% for item in results %}
+        <a href="/auctions/{{item}}"><span class="title">{{item}}</span></a>
+    {% endfor %}
+    </div>
+{% endblock %}

@@ -1,0 +1,218 @@
+body {
+  margin: 10px;
+  background-color: rgb(243, 244, 242);
+  font-family: Arial, sans-serif;
+}
+
+.image {
+  display: border-box;
+  margin: 5x;
+  padding: 3px;
+  width: 40vh;
+  height: 35vh;
+  box-shadow: 2px 2px 2px 2px rgb(79, 75, 75);
+  border: 1px solid rgb(210, 210, 216);
+  border-radius: 5px;
+  background-color: rgb(99, 106, 106);
+
+}
+
+.title {
+  font-family: serif;
+  font-size: 23px;  
+  font-weight: 550;
+  color: rgb(52, 49, 49);
+}
+
+.title:hover {
+  color: rgb(128, 114, 114);
+}
+
+.title1 {
+  font-family:Arial, Helvetica, sans-serif;
+  font-size: 15px;
+  font-weight: bold;
+  color: rgb(71, 67, 67);
+}
+
+.listings {
+  font-family: 'Times New Roman', Times, serif;
+  color: rgb(52, 49, 49);
+  font-size: 31px;  
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); 
+  grid-gap: 5px; 
+}
+
+.grid {
+  display: grid;
+  max-width: 50%;
+}
+
+.text {
+  margin: 5px;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-size: 18px;  
+  font-weight: bold;
+  color: rgb(16, 16, 16);
+}
+
+.closed {
+  border-radius: 5px;
+  margin: 2px;
+  height: 6vh;
+  width: 20vw;
+  padding: 3;
+  box-sizing: border-box;
+  border: solid 1px black;
+  background-color: rgb(221, 83, 83);
+  color: black;
+}
+
+.add{
+  border: solid 1px black;
+  background-color: rgb(118, 223, 193);
+}
+.text1 {
+  margin: 5px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 22px;  
+  font-weight: bold;
+  color: rgb(74, 70, 70);
+}
+
+.text2 {
+  margin: 5px;
+  font-family: serif;
+  font-size: 20px;  
+  font-weight: normal;
+  color: rgb(36, 36, 36);
+}
+
+.text-comments{
+  margin: 5px;
+  font-family: serif;
+  font-size: 22px;  
+  font-weight: normal;
+  color: rgb(36, 36, 36);
+}
+
+.flexible1 {
+  display: flex;
+  flex-direction: row;
+  margin: 5px;
+}
+
+
+.flexible2 {
+  display: flex;
+  flex-direction: column;
+  margin: 15px;
+  margin-top: 5px;
+}
+
+.add-icon {
+  text-align: center;
+  padding: 5px;
+  margin: 5px;
+  background-color: rgb(219, 229, 229);
+  color: rgb(22, 22, 75);
+  width: 17vw;
+  border-radius: 10px;
+}
+
+.add-icon:hover {
+  text-decoration: none;
+  background-color: rgb(196, 255, 204);
+}
+
+a:hover{
+  text-decoration: none;
+}
+
+.contains {
+  border-radius: 5px;
+  border: 1px solid rgb(203, 192, 192);
+  margin-bottom: 5px;
+}
+
+.contains1 {
+  border-radius: 5px;
+  border: 1px solid rgb(242, 233, 233);
+  background-color: rgb(251, 251, 211);
+  margin-bottom: 5px;
+  margin: 3px;
+}
+
+.contains2 {
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 5px;
+  border: 1px solid rgb(203, 192, 192);
+  margin: 8px;
+}
+
+.bid {
+  display: flex;
+  flex-direction: column;
+  margin-top: 40px;
+  width: 100px;
+}
+
+.inp {
+  height: 30px;
+  border-radius: 5px;
+  border: none;
+  background-color: rgb(212, 238, 238);
+}
+
+.inp:focus {
+  outline: none;
+}
+
+input {
+  border: 1px gray solid;
+  border-radius: 5px;
+  background-color: rgb(228, 241, 241);
+}
+
+input:focus {
+  outline: none;
+}
+
+button {
+  margin: 2px;
+  border-radius: 5px;
+  max-height: 40px;
+  text-align: center;
+}
+
+.row1 {
+  display: flex;
+  flex-direction: row;
+  padding: 5px;
+  margin-right: 5px;
+}
+
+.delete1 {
+  border-radius: 7px;
+  background-color: rgb(247, 247, 247);
+  padding: 4px;
+  color: black;
+  margin-left: 40px;
+  text-align: center;
+}
+
+.fa-trash {
+  color:rgb(121, 101, 101);
+}
+
+.create-btn {
+ margin-top: 7px;
+ margin-left: 70px;
+}

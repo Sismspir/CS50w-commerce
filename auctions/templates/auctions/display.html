@@ -1,0 +1,96 @@
+{% extends "auctions/layout.html" %}
+
+{% block body %}
+    {% if request.user == owner %}
+    <div class="contains">
+        <div>
+            <div class="close">
+            <form method="post">
+                {% csrf_token %}
+                {{ form.as_p }}
+                <button class="closed" type="Submit">Close Listing</button>
+            </div>
+            </form>
+        <div>
+            <a href="{% url 'add' %}?id={{ id }}"> <div class="add-icon text1"> Add me   <i class="fas fa-thumbs-up"> </div></i></a>
+            <h3 class="text1" > {{ title }} owned by {{ owner }}</h3>
+            
+        <div class="flexible1">
+            <img class="image" src="{{ url }}" alt="">
+            <div class="flexible2"> 
+                <h3 class="text2"> Starting price: {{ starting_price }}$</h3>
+                <h3 class="text2">Current bid: {{ new_bid }}$</h3>
+                <h3 class="text2">Description: {{ text }}</h3>
+                <!-- <h3> the item is active: {{ is_active }} </h3> -->
+            </div>    
+        </div>
+    </div>
+    </div>
+   </div>
+   <div class="contains">
+        <!-- {{ is_active }} -->
+        {% if is_active == True %}
+                <h3 class="text2">add comments:</h3>
+                <form action=""  method="POST">
+                    {% csrf_token %}
+                    <input type="text" name="new_comment">
+                    <button class="btn-primary" type="submit">Save comment</button>
+                </form>
+                {% for comment in comment_list %}
+                <div class="contains1">
+                <h3 class="text-comments"> {{ comment.author }} commented: {{ comment.content }}</h3>
+                </div>
+        {% endfor %}
+        {% endif %}
+        {% else %}
+            {% if request.user == winner and is_active == False %}
+            <h1 class="text2"> The listing is closed. The winner is {{ winner }}</h1>
+                <div class="overlay">
+                    <div class="overlay-message">
+                    <h2>Congratulations!</h2>
+                    <p>You have won that auction!!!</p>
+                    </div>
+                </div>
+            {% endif %}
+    <div class="contains">
+        <a href="{% url 'add' %}?id={{ id }}"> <div class="add-icon text1"> Add me   <i class="fas fa-thumbs-up"> </div></i></a>
+            <h3 class="text1" > {{ title }} owned by {{ owner }}</h3>       
+            <div class="flexible1">
+                <img class="image" src="{{ url }}" alt="">
+                <div class="flexible2"> 
+                    <h3 class="text2"> Starting price: {{ starting_price }}$</h3>
+                    <h3 class="text2">Current bid: {{ new_bid }}$</h3>
+                    <h3 class="text2">Description: {{ text }}</h3>
+                    {% if is_active == True %}
+                    <form class="bid" method="POST">
+                        {% csrf_token %}
+                        <input class="inp" type="number" step="0.01" name ="bid" min="{{starting_price}}" required>
+                        <button type="submit"><h3 class=text2>Add bid</h3></button>
+                    </form>    
+                    {% endif %}
+                </div>
+            </div>
+    
+        {% if is_active == False %}
+            <h2 class="text"> This item was sold! </h2>
+        {% endif %}
+    </div>
+    <div class="contains">
+        {% if is_active == True %}
+            <h3 class="text2">add comments:</h3>
+            <form action=""  method="POST">
+                {% csrf_token %}
+                <input type="text" name="new_comment">
+                <button class="btn-primary" type="submit">Save comment</button>
+            </form>
+            {% for comment in comment_list %}
+            <div class="contains1">
+            <h3 class="text-comments"> {{ comment.author }} commented: {{ comment.content }}</h3>
+            </div>
+            {% endfor %}
+    </div>
+ </div>
+    {% endif %}
+    {% endif %}
+{% endblock %}
+
